@@ -125,25 +125,42 @@ document.addEventListener('DOMContentLoaded', function(){
   counters.forEach(c => counterIO.observe(c));
 
   // ---- Testimonials slider ----
-  const track = document.getElementById('testiTrack');
-  const dotsWrap = document.getElementById('testiDots');
-  const slides = track.children.length;
-  for(let i=0;i<slides;i++){
-    const b = document.createElement('button');
-    if(i===0) b.classList.add('active');
-    b.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(b);
+const track = document.getElementById('testiTrack');
+const dotsWrap = document.getElementById('testiDots');
+const slides = track.children.length;
+
+let idx = 0;
+
+// Create dots
+for (let i = 0; i < slides; i++) {
+  const b = document.createElement('button');
+
+  if (i === 0) {
+    b.classList.add('active');
   }
-  let idx = 0;
-  function goTo(i){
-    idx = i;
-    track.style.transform = 'translateX(-' + (i*100) + '%)';
-    track.style.transition = 'transform .6s cubic-bezier(.22,.61,.36,1)';
-    track.style.display='flex';
-    [...dotsWrap.children].forEach((d,di) => d.classList.toggle('active', di===i));
-  }
-  setInterval(() => goTo((idx+1) % slides), 6000);
-  goTo(0);
+
+  b.addEventListener('click', () => goTo(i));
+  dotsWrap.appendChild(b);
+}
+
+// Move slider
+function goTo(i) {
+  idx = i;
+
+  track.style.transform = `translateX(-${i * 100}%)`;
+
+  [...dotsWrap.children].forEach((dot, di) => {
+    dot.classList.toggle('active', di === i);
+  });
+}
+
+// Start
+goTo(0);
+
+// Auto slide every 6 seconds
+setInterval(() => {
+  goTo((idx + 1) % slides);
+}, 6000);
 
   // ---- Menu tabs ----
   document.querySelectorAll('.menu-tab').forEach(tab => {
