@@ -458,16 +458,28 @@ footer ul li a:hover{ color:var(--c-gold); }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-/* Footer Opening Hours */
-.footer-grid li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+/* Opening Hours Alignment */
+.opening-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-grid li span {
-  width: 110px;
-  flex-shrink: 0;
+.opening-hours li {
+  display: grid;
+  grid-template-columns: 100px auto;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.opening-hours li span {
+  white-space: nowrap;
+}
+
+.opening-hours li strong {
+  font-weight: normal;
+  white-space: nowrap;
 }
 
 @media (max-width: 1240px){
