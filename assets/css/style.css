@@ -458,6 +458,18 @@ footer ul li a:hover{ color:var(--c-gold); }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+/* Footer Opening Hours */
+.footer-grid li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-grid li span {
+  width: 100px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1240px){
   .logo{ font-size:1.7rem; gap:.6rem; }
   .logo img{ height:44px; }
