@@ -361,7 +361,7 @@ footer ul li a:hover{ color:var(--c-gold); }
   background: linear-gradient(rgba(11,17,15,.7), rgba(11,17,15,.7)), center/cover;
 }
 .page-hero.menu-bg{ background-image: linear-gradient(rgba(11,17,15,.72), rgba(11,17,15,.72)), url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1800&auto=format&fit=crop'); background-size:cover; background-position:center; }
-.page-hero.about-bg{ background-image: linear-gradient(rgba(11,17,15,.72), rgba(11,17,15,.72)), url('../assets/images/Lahorein.png'); background-size:cover; background-position:center; }
+.page-hero.about-bg{ background-image: linear-gradient(rgba(11,17,15,.72), rgba(11,17,15,.72)), url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=600&auto=format&fit=crop'); background-size:cover; background-position:center; }
 .page-hero.gallery-bg{ background-image: linear-gradient(rgba(11,17,15,.72), rgba(11,17,15,.72)), url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=1800&auto=format&fit=crop'); background-size:cover; background-position:center; }
 .page-hero.contact-bg{ background-image: linear-gradient(rgba(11,17,15,.72), rgba(11,17,15,.72)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1800&auto=format&fit=crop'); background-size:cover; background-position:center; }
 .page-hero .eyebrow{ color:var(--c-gold-soft); }
