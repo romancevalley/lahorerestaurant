@@ -313,22 +313,6 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{ width:100%; }
 .testi-dots button{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.25); transition:.3s; }
 .testi-dots button.active{ background:var(--c-gold); width:26px; border-radius:5px; }
 
-.testi-track {
-  display: block !important;
-  transform: none !important;
-  width: 100% !important;
-}
-
-.testi-slide {
-  display: block !important;
-  width: 100% !important;
-  min-width: 100% !important;
-  max-width: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  position: relative !important;
-}
 
 /* ============================================================
    AWARDS / COUNTERS
