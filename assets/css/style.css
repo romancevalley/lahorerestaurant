@@ -556,3 +556,7 @@ footer ul li a:hover{ color:var(--c-gold); }
   .menu-item img{ width:100%; height:160px; }
   .header-actions{ gap:.5rem; }
 }
+
+#gallery-preview {
+  display: none;
+}
