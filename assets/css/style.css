@@ -466,7 +466,7 @@ footer ul li a:hover{ color:var(--c-gold); }
 }
 
 .footer-grid li span {
-  width: 100px;
+  width: 110px;
   flex-shrink: 0;
 }
 
