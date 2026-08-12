@@ -279,20 +279,25 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{ width:100%; }
    TESTIMONIALS SLIDER
    ============================================================ */
 .testimonials{ padding:7rem 0; background:var(--c-charcoal); color:var(--c-white); position:relative; }
+.testi-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
 .testi-track {
   display: flex;
   width: 100%;
-  overflow: hidden;
+  transition: transform .6s cubic-bezier(.22,.61,.36,1);
 }
 
 .testi-slide {
   flex: 0 0 100%;
   width: 100%;
   min-width: 100%;
-  max-width: none;
   box-sizing: border-box;
   text-align: center;
   padding: 0 20px;
+  margin: 0;
 }
 .testi-stars{ color:var(--c-gold); margin-bottom:1.4rem; letter-spacing:4px; }
 .testi-slide p.quote {
@@ -307,6 +312,23 @@ nav.main-nav a:hover::after, nav.main-nav a.active::after{ width:100%; }
 .testi-dots{ display:flex; justify-content:center; gap:.6rem; margin-top:2.6rem; }
 .testi-dots button{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.25); transition:.3s; }
 .testi-dots button.active{ background:var(--c-gold); width:26px; border-radius:5px; }
+
+.testi-track {
+  display: block !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+.testi-slide {
+  display: block !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  position: relative !important;
+}
 
 /* ============================================================
    AWARDS / COUNTERS
