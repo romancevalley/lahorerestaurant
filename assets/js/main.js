@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // ---- Header scroll state + progress bar + parallax + back-to-top ----
   const header = document.getElementById('siteHeader');
-  const heroBg = document.getElementById('heroBg');
+  const heroBg = document.getElementById('heroVideo');
   const progress = document.getElementById('scroll-progress');
   const backToTop = document.getElementById('backToTop');
 
