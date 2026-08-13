@@ -38,6 +38,15 @@ document.addEventListener('DOMContentLoaded', function(){
         el.textContent = val.replace(/&amp;/g,'&').replace(/&quot;/g,'"');
       }
     });
+
+    const heroEyebrow = document.getElementById('heroEyebrow');
+
+if(heroEyebrow){
+  heroEyebrow.textContent = lang === 'en'
+    ? heroEyebrow.dataset.en
+    : heroEyebrow.dataset.pl;
+}
+
     document.querySelectorAll('[data-en-ph]').forEach(el => {
       el.setAttribute('placeholder', lang === 'en' ? el.dataset.enPh : el.dataset.plPh);
     });
