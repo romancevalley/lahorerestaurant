@@ -261,186 +261,21 @@ setInterval(() => {
 
 });
 
-
 /* ============================================================
-   RESTAURANT CART - STEP 3
+   RESTAURANT CART - STEP 2 RESTORE
    ============================================================ */
 
-(function () {
+document.addEventListener('click', function (e) {
 
-  let cart = [];
+  const button = e.target.closest('.add-to-cart');
 
-  const cartBox = document.getElementById("cartBox");
-  const cartItems = document.getElementById("cartItems");
-  const cartTotal = document.getElementById("cartTotal");
-  const closeCart = document.getElementById("closeCart");
+  if (!button) return;
 
-  function renderCart() {
+  const productName = button.dataset.productName;
+  const productPrice = Number(button.dataset.productPrice);
 
-    if (!cartItems || !cartTotal) return;
+  console.log('Product clicked:', productName, productPrice);
 
-    if (cart.length === 0) {
+  alert(productName + " added to cart!");
 
-      cartItems.innerHTML =
-        '<p class="empty-cart">Your cart is empty.</p>';
-
-      cartTotal.textContent = "0 zł";
-
-      return;
-    }
-
-    let total = 0;
-
-    cartItems.innerHTML = "";
-
-    cart.forEach(function (item) {
-
-      const itemTotal = item.price * item.quantity;
-
-      total += itemTotal;
-
-      const itemHTML = document.createElement("div");
-
-      itemHTML.className = "cart-item";
-
-      itemHTML.innerHTML = `
-        <div class="cart-item-info">
-          <strong>${item.name}</strong>
-          <span>${item.price} zł × ${item.quantity}</span>
-        </div>
-
-        <div class="cart-item-controls">
-
-          <button
-            type="button"
-            class="cart-minus"
-            data-id="${item.id}">
-            −
-          </button>
-
-          <span>${item.quantity}</span>
-
-          <button
-            type="button"
-            class="cart-plus"
-            data-id="${item.id}">
-            +
-          </button>
-
-        </div>
-
-        <strong class="cart-item-total">
-          ${itemTotal} zł
-        </strong>
-      `;
-
-      cartItems.appendChild(itemHTML);
-
-    });
-
-    cartTotal.textContent = total + " zł";
-  }
-
-
-  /* ADD TO CART */
-
-  document.addEventListener("click", function (e) {
-
-    const button = e.target.closest(".add-to-cart");
-
-    if (!button) return;
-
-    const productId = button.dataset.productId;
-    const productName = button.dataset.productName;
-    const productPrice = Number(button.dataset.productPrice);
-
-    const existingProduct = cart.find(function (item) {
-      return item.id === productId;
-    });
-
-    if (existingProduct) {
-
-      existingProduct.quantity += 1;
-
-    } else {
-
-      cart.push({
-        id: productId,
-        name: productName,
-        price: productPrice,
-        quantity: 1
-      });
-
-    }
-
-    renderCart();
-
-    if (cartBox) {
-      cartBox.classList.add("show");
-    }
-
-  });
-
-
-  /* PLUS / MINUS */
-
-  document.addEventListener("click", function (e) {
-
-    const plusButton = e.target.closest(".cart-plus");
-    const minusButton = e.target.closest(".cart-minus");
-
-    if (plusButton) {
-
-      const item = cart.find(function (product) {
-        return product.id === plusButton.dataset.id;
-      });
-
-      if (item) {
-        item.quantity += 1;
-        renderCart();
-      }
-
-    }
-
-    if (minusButton) {
-
-      const item = cart.find(function (product) {
-        return product.id === minusButton.dataset.id;
-      });
-
-      if (item) {
-
-        item.quantity -= 1;
-
-        if (item.quantity <= 0) {
-
-          cart = cart.filter(function (product) {
-            return product.id !== minusButton.dataset.id;
-          });
-
-        }
-
-        renderCart();
-      }
-
-    }
-
-  });
-
-
-  /* CLOSE CART */
-
-  if (closeCart) {
-
-    closeCart.addEventListener("click", function () {
-
-      cartBox.classList.remove("show");
-
-    });
-
-  }
-
-
-  renderCart();
-
-})();
+});
