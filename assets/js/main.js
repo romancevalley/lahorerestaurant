@@ -38,15 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
         el.textContent = val.replace(/&amp;/g,'&').replace(/&quot;/g,'"');
       }
     });
-
-    const heroEyebrow = document.getElementById('heroEyebrow');
-
-if(heroEyebrow){
-  heroEyebrow.textContent = lang === 'en'
-    ? heroEyebrow.dataset.en
-    : heroEyebrow.dataset.pl;
-}
-
+    
     document.querySelectorAll('[data-en-ph]').forEach(el => {
       el.setAttribute('placeholder', lang === 'en' ? el.dataset.enPh : el.dataset.plPh);
     });
@@ -268,3 +260,43 @@ setInterval(() => {
   sections.forEach(s => navIO.observe(s));
 
 });
+
+/* ============================================================
+   SIMPLE RESTAURANT CART - STEP 2
+   ============================================================ */
+
+(function () {
+
+  let cart = [];
+
+  // Add to Cart
+  document.addEventListener("click", function (e) {
+
+    const button = e.target.closest(".add-to-cart");
+
+    if (!button) return;
+
+    const productId = button.dataset.productId;
+    const productName = button.dataset.productName;
+    const productPrice = Number(button.dataset.productPrice);
+
+    const existingProduct = cart.find(item => item.id === productId);
+
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      cart.push({
+        id: productId,
+        name: productName,
+        price: productPrice,
+        quantity: 1
+      });
+    }
+
+    console.log("Cart:", cart);
+
+    alert(productName + " added to cart!");
+
+  });
+
+})();
