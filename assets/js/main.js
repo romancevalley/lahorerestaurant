@@ -305,4 +305,10 @@ function updateCart() {
 
   console.log("Current cart:", cart);
 
+  const totalItems = cart.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0);
+
+  console.log("Total items:", totalItems);
+
 }
