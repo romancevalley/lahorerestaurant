@@ -262,8 +262,10 @@ setInterval(() => {
 });
 
 /* ============================================================
-   RESTAURANT CART - STEP 2 RESTORE
+   RESTAURANT CART - STEP 3
    ============================================================ */
+
+const cart = [];
 
 document.addEventListener('click', function (e) {
 
@@ -276,6 +278,31 @@ document.addEventListener('click', function (e) {
 
   console.log('Product clicked:', productName, productPrice);
 
+  const existingItem = cart.find(item => item.name === productName);
+
+  if (existingItem) {
+
+    existingItem.quantity += 1;
+
+  } else {
+
+    cart.push({
+      name: productName,
+      price: productPrice,
+      quantity: 1
+    });
+
+  }
+
+  updateCart();
+
   alert(productName + " added to cart!");
 
 });
+
+
+function updateCart() {
+
+  console.log("Current cart:", cart);
+
+}
