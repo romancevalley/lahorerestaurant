@@ -311,4 +311,10 @@ function updateCart() {
 
   console.log("Total items:", totalItems);
 
+  // Update cart counter
+  const cartCounter = document.querySelector('#cart-count');
+
+  if (cartCounter) {
+    cartCounter.textContent = totalItems;
+  }
 }
