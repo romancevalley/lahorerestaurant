@@ -747,6 +747,7 @@ footer ul li a:hover{ color:var(--c-gold); }
   background: #0B4F3A;
   color: #D4AF37;
   border-color: #D4AF37;
+  transform: translateY(-2px);
 }
 
 .cart-button i {
