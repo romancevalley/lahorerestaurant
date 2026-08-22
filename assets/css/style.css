@@ -721,10 +721,10 @@ footer ul li a:hover{ color:var(--c-gold); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: .5rem;
 
-  height: 46px;
-  min-width: 120px;
+  height: 50px;
+  min-width: 130px;
   padding: 14px 30px;
 
   background: #D4AF37;
